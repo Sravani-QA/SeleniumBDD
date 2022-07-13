@@ -15,12 +15,7 @@ public class Configuration {
             Yaml yaml = new Yaml();
             Map<String, String> data = (Map<String, String>) yaml.load(inputStream);
             System.out.println("Configuration data->"+data);
-            System.setProperty("Environment",data.get("Environment"));
-            System.setProperty("AppName",data.get("AppName"));
-            System.setProperty("Email",data.get("Email"));
-            System.setProperty("Password",data.get("Password"));
-            System.setProperty("StartDate",data.get("StartDate"));
-            System.setProperty("EndDate",data.get("EndDate"));
+            System.setProperty("Browser",data.get("Browser"));
             System.out.println("Config parameters set successfully");
         }catch (Exception e){
             Assert.fail("Failed to set up Config Properties"+e.getMessage());

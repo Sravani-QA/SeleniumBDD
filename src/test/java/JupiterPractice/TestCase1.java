@@ -15,6 +15,5 @@ public class TestCase1 {
        jupiterPagesPractice.enterMandatoryFieldsInContactPage("Anu","anu@gmail.com","Hello");
        jupiterPagesPractice.submitButton();
        jupiterPagesPractice.validateSuccessMessage();
-       jupiterPagesPractice.quit();
     }
 }

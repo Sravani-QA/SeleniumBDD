@@ -5,15 +5,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.DriverFactory;
+import utilities.ReportConfiguration;
 
 import java.util.concurrent.TimeUnit;
 
 public class JupiterPagesPractice {
     WebDriver driver;
-//    BasePage basePage= new BasePage();
+    BasePage basePage= new BasePage();
+    ReportConfiguration report=new ReportConfiguration();
 
     public JupiterPagesPractice(){
-        createDriver();
+        driver= DriverFactory.getDriver();
         PageFactory.initElements(driver,this);
     }
 
@@ -102,15 +105,12 @@ public class JupiterPagesPractice {
     @FindBy(css = "tfoot:nth-child(3) tr:nth-child(1) td:nth-child(1) > strong.total.ng-binding")
     public static WebElement Total;
 
-    public  void createDriver(){
-         System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver103");
-         driver=new ChromeDriver();
-         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    }
 
     public void navigateToURL(){
         try{
             driver.get(JupiterURL);
+            basePage.waitForSeconds(3);
+            report.takeScreenshot(driver,"After navigating to Application URL");
         }catch (Exception ex){
             System.out.println("Exception Found-"+ex);
         }
@@ -118,7 +118,8 @@ public class JupiterPagesPractice {
 
     public  void  navigateToContactPage(){
         try{
-           JupiterPagesPractice.ContactPage.click();
+           ContactPage.click();
+            basePage.click(JupiterPagesPractice.ContactPage);
         } catch (Exception ex){
            System.out.println("Exception Found-"+ex);
         }
@@ -126,7 +127,8 @@ public class JupiterPagesPractice {
 
     public void navigateToShopPage(){
         try {
-            JupiterPagesPractice.ShopPage.click();
+            ShopPage.click();
+
         }catch (Exception ex){
             System.out.println("Exception Found-"+ex);
         }
@@ -134,7 +136,7 @@ public class JupiterPagesPractice {
 
     public void buyFunnyCow(){
         try {
-            JupiterPagesPractice.FunnyCow.click();
+            FunnyCow.click();
         }catch (Exception ex){
             System.out.println("Exception Found-"+ex);
         }
@@ -142,7 +144,7 @@ public class JupiterPagesPractice {
 
     public void buyFluffyBunny(){
         try {
-            JupiterPagesPractice.FluffyBunny.click();
+            FluffyBunny.click();
         }catch (Exception ex){
             System.out.println("Exception Found-"+ex);
         }
@@ -150,7 +152,7 @@ public class JupiterPagesPractice {
 
     public void buyStuffedFrog(){
         try {
-            JupiterPagesPractice.StuffedFrog.click();
+            StuffedFrog.click();
         }catch (Exception ex){
             System.out.println("Exception Found-"+ex);
         }
@@ -158,7 +160,7 @@ public class JupiterPagesPractice {
 
     public void buyValentineBear(){
         try {
-            JupiterPagesPractice.ValentineBear.click();
+            ValentineBear.click();
         }catch (Exception ex){
             System.out.println("Exception Found-"+ex);
         }
@@ -195,7 +197,8 @@ public class JupiterPagesPractice {
 
     public void enterMandatoryFieldsInContactPage(String forename, String email, String message){
         try {
-          ForeName.sendKeys(forename);
+         // ForeName.sendKeys(forename);
+          basePage.enterText(ForeName, forename);
           Email.sendKeys(email);
           Message.sendKeys(message);
         } catch (Exception ex){
@@ -344,10 +347,6 @@ public class JupiterPagesPractice {
         }catch (Exception ex){
             System.out.println("Exception Found-"+ex);
         }
-    }
-
-    public void quit(){
-        driver.close();
     }
 
 }

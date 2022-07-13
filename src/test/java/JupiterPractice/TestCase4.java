@@ -30,7 +30,7 @@ public class TestCase4 {
         jupiterPagesPractice.actualPriceAndQtyOfValentineBear();
 
         jupiterPagesPractice.verifyingTotalWithSumOfSubtotal();
-        jupiterPagesPractice.quit();
+
 //        System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver");
 //        WebDriver driver=new ChromeDriver();
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

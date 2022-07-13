@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Jupiter Tests Suite"  thread-count="1">
+
+       <listeners>
+            <listener class-name="utilities.TestListener"/>
+        </listeners>
+
+        <test name="Test1" >
+            <classes>
+                <class name="JupiterPractice.TestCase1"/>
+            </classes>
+        </test>
+</suite>

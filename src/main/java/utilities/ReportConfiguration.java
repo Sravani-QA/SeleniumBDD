@@ -102,13 +102,11 @@ public class ReportConfiguration {
             count++;
             FileUtils.copyFile(screenshot, destinationFilePath);
             Image image=Image.getInstance(destinationFilePath.getAbsolutePath());
-            if(System.getProperty("Browser").contains("mobile")){
-                image.scaleToFit(250f, 450f);
-            }else{
-                image.scaleAbsolute(500.0F, 500.0F);
-            }
+
+            image.scaleAbsolute(500.0F, 500.0F);
             documentInstance.get().add(image);
             System.out.println(stepDescription+"-added to pdf");
+
             test.log(LogStatus.PASS, stepDescription + test.addScreenCapture(
                             addScreenshot(destinationFilePath.getAbsolutePath())));
 

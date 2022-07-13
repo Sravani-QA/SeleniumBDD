@@ -15,7 +15,6 @@ public class TestCase3 {
         jupiterPagesPractice.buyFluffyBunny();
         jupiterPagesPractice.clickOnCartButton();
         jupiterPagesPractice.VerifyingItemsInCart();
-        jupiterPagesPractice.quit();
 //        System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver");
 //        WebDriver driver=new ChromeDriver();
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

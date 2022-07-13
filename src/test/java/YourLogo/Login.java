@@ -1,7 +1,6 @@
 package YourLogo;
 
 import org.testng.annotations.Test;
-import pages.YourLogoPages;
 
 public class Login {
     @Test
@@ -9,6 +8,6 @@ public class Login {
        YourLogoPages yourLogoPages=new YourLogoPages();
        yourLogoPages.navigateToURL();
        yourLogoPages.login();
-       yourLogoPages.quit();
+       //yourLogoPages.quit();
     }
 }

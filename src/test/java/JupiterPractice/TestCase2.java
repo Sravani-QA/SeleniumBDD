@@ -13,7 +13,6 @@ public class TestCase2 {
         jupiterPagesPractice.enterMandatoryFieldsInContactPage("Anu","anu@gmail.com","Hello");
         jupiterPagesPractice.submitButton();
         jupiterPagesPractice.validateSuccessMessage();
-        jupiterPagesPractice.quit();
 
 
 //        System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver");

@@ -1,4 +1,4 @@
-package pages;
+package YourLogo;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,12 +6,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import utilities.DriverFactory;
+
 import java.util.concurrent.TimeUnit;
 
 public class YourLogoPages {
     WebDriver driver;
      public YourLogoPages(){
-         createDriver();
+         driver= DriverFactory.getDriver();
          PageFactory.initElements(driver,this);
      }
      public static String YourLogoURL="http://automationpractice.com/index.php";
@@ -73,7 +75,7 @@ public class YourLogoPages {
      public static WebElement AddToWishlist;
      @FindBy(xpath = "//p[contains(text(),'Added to your wishlist.')]")
      public static WebElement AddedToWishListMessage;
-     @FindBy(xpath = "//body/div[2]//a[1]")
+     @FindBy(xpath = "//div[4]/div[1]/div[1]/span[1]")
      public static WebElement RemoveWishlistMessage;
      @FindBy(xpath = "//span[contains(text(),'Anu Anusha')]")
      public static WebElement MyAccount;
@@ -117,12 +119,6 @@ public class YourLogoPages {
     public static WebElement AddPaymentMethod;
     @FindBy(xpath = "//p[contains(text(),'Your order on My Store is complete.')]")
     public static WebElement ConfirmationMessage;
-    public void createDriver(){
-        System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver103");
-        driver=new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(40,TimeUnit.SECONDS);
-    }
 
     public void navigateToURL(){
         try {

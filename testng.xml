@@ -6,23 +6,24 @@
             <listener class-name="utilities.TestListener"/>
         </listeners>
 
-    <!-- <parameter name = "Browser" value="local-web-chrome"/>-->
-
         <test name="Test1" >
             <classes>
                 <class name="YourLogo.SignUp"/>
             </classes>
         </test>
+
         <test name="TestCase2" >
             <classes>
                 <class name="YourLogo.Login"/>
             </classes>
         </test>
+
         <test name="TestCase3" >
             <classes>
                 <class name="YourLogo.Shopping"/>
             </classes>
         </test>
+
         <test name="TestCase4" >
             <classes>
                 <class name="YourLogo.DressesShopping"/>

@@ -30,7 +30,6 @@ public class TestListener implements ITestListener, IReporter {
 
     public void onStart(ITestContext iTestContext) {
         System.out.println("####### Started  " + iTestContext.getCurrentXmlTest().getName() + " Test  **********");
-        Configuration.setUp();
         ExtentReports extent = ReportManager.getReporter();
         ReportManager.updateConfigFile(iTestContext.getCurrentXmlTest().getSuite().getName(), extent);
         report.setExtentReportInstance(extent);
