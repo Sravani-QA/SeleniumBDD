@@ -103,7 +103,7 @@ public class JupiterPagesPractice {
     public static WebElement Total;
 
     public  void createDriver(){
-         System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver");
+         System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver103");
          driver=new ChromeDriver();
          driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }

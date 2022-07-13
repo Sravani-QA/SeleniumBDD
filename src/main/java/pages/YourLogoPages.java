@@ -118,7 +118,7 @@ public class YourLogoPages {
     @FindBy(xpath = "//p[contains(text(),'Your order on My Store is complete.')]")
     public static WebElement ConfirmationMessage;
     public void createDriver(){
-        System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver 2");
+        System.setProperty("webdriver.chrome.driver","src/main/resources/Drivers/chromedriver103");
         driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(40,TimeUnit.SECONDS);
