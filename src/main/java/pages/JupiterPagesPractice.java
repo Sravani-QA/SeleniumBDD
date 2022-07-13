@@ -112,86 +112,96 @@ public class JupiterPagesPractice {
             basePage.waitForSeconds(3);
             report.takeScreenshot(driver,"After navigating to Application URL");
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
     public  void  navigateToContactPage(){
         try{
-           ContactPage.click();
-            basePage.click(JupiterPagesPractice.ContactPage);
+            basePage.click(ContactPage);
+            basePage.waitForSeconds(3);
+            report.takeScreenshot(driver,"Navigated to contact page");
         } catch (Exception ex){
-           System.out.println("Exception Found-"+ex);
+           report.log("Exception Found-"+ex);
         }
     }
 
     public void navigateToShopPage(){
         try {
-            ShopPage.click();
-
+            basePage.click(ShopPage);
+            basePage.waitForSeconds(3);
+            report.takeScreenshot(driver,"Navigated to shop page");
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
     public void buyFunnyCow(){
         try {
-            FunnyCow.click();
+            basePage.click(FunnyCow);
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
     public void buyFluffyBunny(){
         try {
-            FluffyBunny.click();
+            basePage.click(FluffyBunny);
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
     public void buyStuffedFrog(){
         try {
-            StuffedFrog.click();
+            basePage.click(StuffedFrog);
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
     public void buyValentineBear(){
         try {
-            ValentineBear.click();
+            basePage.click(ValentineBear);
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
     public void clickOnCartButton(){
         try {
-            JupiterPagesPractice.CartButton.click();
+            basePage.click(CartButton);
+            basePage.waitForSeconds(3);
+            report.takeScreenshot(driver,"After clicking on cart button");
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
     public void submitButton(){
         try{
-            JupiterPagesPractice.SubmitButton.click();
+            basePage.click(SubmitButton);
         } catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
     public void validateContactPageMandatoryErrors(){
         try {
-            if(ForeNameError.isEnabled() && EmailError.isEnabled() && MessageError.isEnabled())
+            if (basePage.checkElementExists(ForeNameError) &&
+                    basePage.checkElementExists(EmailError) &&
+                            basePage.checkElementExists(MessageError))
+            //if(ForeNameError.isEnabled() && EmailError.isEnabled() && MessageError.isEnabled())
             {
-                System.out.println("Error Exist");
-            } else {
-                System.out.println("Error doesnot Exist");
+                basePage.waitForSeconds(3);
+                report.takeScreenshot(driver, "Mandatory error exist in Contact page");
+                report.log("Error Exist");
+            }
+            else {
+                report.log("Error doesnot Exist");
             }
         } catch (Exception ex){
-         System.out.println("Exception Found-"+ex);
+         report.log("Exception Found-"+ex);
         }
     }
 
@@ -199,29 +209,33 @@ public class JupiterPagesPractice {
         try {
          // ForeName.sendKeys(forename);
           basePage.enterText(ForeName, forename);
-          Email.sendKeys(email);
-          Message.sendKeys(message);
+          basePage.enterText(Email, email);
+          basePage.enterText(Message, message);
         } catch (Exception ex){
-         System.out.println("Exception Found-"+ex);
+         report.log("Exception Found-"+ex);
         }
     }
 
     public void validateSuccessMessage(){
         try{
-            SuccessMessage.isDisplayed();
+            //SuccessMessage.isDisplayed();
+            basePage.checkElementExists(SuccessMessage);
+            basePage.waitForSeconds(3);
+            report.takeScreenshot(driver,"Success message");
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            //System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
     public void VerifyingItemsInCart(){
         try {
-            FunnyCowInCart.isDisplayed();
-            QtyOfFunnyCow.isDisplayed();
-            FluffyBunnyInCart.isDisplayed();
-            qtyOfFluffyBunny.isDisplayed();
+            basePage.checkElementExists(FunnyCowInCart);
+            basePage.checkElementExists(QtyOfFunnyCow);
+            basePage.checkElementExists(FluffyBunnyInCart);
+            basePage.checkElementExists(qtyOfFluffyBunny);
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
@@ -230,24 +244,24 @@ public class JupiterPagesPractice {
             String PriceOfStuffedFrog= String.valueOf(ActualPriceOfStuffedFrog.getText());
             String NewPrice1=PriceOfStuffedFrog.substring(1,6);
             double ProductPriceOfStuffedFrog=Double.parseDouble(NewPrice1);
-            System.out.println("Stuffed Frog ActualPrice-"+ProductPriceOfStuffedFrog);
+            report.log("Stuffed Frog ActualPrice-"+ProductPriceOfStuffedFrog);
 
             String quantityOfStuffedFrog=String.valueOf(QtyOfStuffedFrog.getAttribute("value"));
             int Qty1=Integer.parseInt(quantityOfStuffedFrog);
-            System.out.println("QtyOfStuffedFrog-"+Qty1);
+            report.log("QtyOfStuffedFrog-"+Qty1);
             double ExpectedSubtotal1 =ProductPriceOfStuffedFrog*Qty1;
-            System.out.println("Expected Subtotal of StuffedFrog-"+ ExpectedSubtotal1);
+            report.log("Expected Subtotal of StuffedFrog-"+ ExpectedSubtotal1);
             String Subtotal=String.valueOf(SubTotalOfStuffedFrog.getText());
             String NewSubtotal=Subtotal.substring(1,6);
             double ActualSubtotal =Double.parseDouble(NewSubtotal);
-            System.out.println("Actual Subtotal of Stuffed frog-"+ActualSubtotal);
+            report.log("Actual Subtotal of Stuffed frog-"+ActualSubtotal);
             if(ActualSubtotal == ExpectedSubtotal1){
-                System.out.println("Both are equal");
+                report.log("Both are equal");
             } else{
-                System.out.println("Both are not equal");
+                report.log("Both are not equal");
             }
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
@@ -256,24 +270,24 @@ public class JupiterPagesPractice {
             String PriceOfFluffyBunny= String.valueOf(ActualPriceOfFluffyBunny.getText());
             String NewPrice2=PriceOfFluffyBunny.substring(1,5);
             double ProductPriceOfFluffyBunny = Double.parseDouble(NewPrice2);
-            System.out.println("Fluffy Bunny ActualPrice-"+ProductPriceOfFluffyBunny);
+            report.log("Fluffy Bunny ActualPrice-"+ProductPriceOfFluffyBunny);
 
             String quantityOfFluffyBunny=String.valueOf(QtyOfFluffyBunny.getAttribute("value"));
             int Qty2=Integer.parseInt(quantityOfFluffyBunny);
-            System.out.println("QtyOfFluffyBunny-"+Qty2);
+            report.log("QtyOfFluffyBunny-"+Qty2);
             double ExpectedSubtotal2 =ProductPriceOfFluffyBunny*Qty2;
-            System.out.println("Expected Subtotal of FluffyBunny-"+ ExpectedSubtotal2);
+            report.log("Expected Subtotal of FluffyBunny-"+ ExpectedSubtotal2);
             String Subtotal=String.valueOf(SubTotalOfFluffyBunny.getText());
             String NewSubTotal=Subtotal.substring(1,6);
             double ActualSubTotal=Double.parseDouble(NewSubTotal);
-            System.out.println("Actual Subtotal of Fluffy Bunny-"+ActualSubTotal);
+            report.log("Actual Subtotal of Fluffy Bunny-"+ActualSubTotal);
             if (ExpectedSubtotal2==ActualSubTotal){
-                System.out.println("Both are equal");
+                report.log("Both are equal");
             }else{
-                System.out.println("Both are not equal");
+                report.log("Both are not equal");
             }
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
@@ -282,24 +296,24 @@ public class JupiterPagesPractice {
             String PriceOfValentineBear=String.valueOf(ActualPriceOfValentineBear.getText());
             String NewPrice3=PriceOfValentineBear.substring(1,6);
             double ProductPriceOfValentineBear=Double.parseDouble(NewPrice3);
-            System.out.println("Valentine Bear ActualPrice-"+ProductPriceOfValentineBear);
+            report.log("Valentine Bear ActualPrice-"+ProductPriceOfValentineBear);
 
             String quantityOfValentineBear=String.valueOf(QtyOfValentineBear.getAttribute("value"));
             int Qty3=Integer.parseInt(quantityOfValentineBear);
-            System.out.println("QtyOfValentineBear-"+Qty3);
+            report.log("QtyOfValentineBear-"+Qty3);
             double ExpectedSubtotal3=ProductPriceOfValentineBear*Qty3;
-            System.out.println("Expected Subtotal of ValentineBear-"+ExpectedSubtotal3);
+            report.log("Expected Subtotal of ValentineBear-"+ExpectedSubtotal3);
             String Subtotal=String.valueOf(SubtotalOfValentineBear.getText());
             String NewSubTotal=Subtotal.substring(1,6);
             double ActualSubTotal=Double.parseDouble(NewSubTotal);
-            System.out.println("Actual Subtotal of Valentine Bear-"+ActualSubTotal);
+            report.log("Actual Subtotal of Valentine Bear-" + ActualSubTotal);
             if (ExpectedSubtotal3==ActualSubTotal){
-                System.out.println("Both are equal");
+                report.log("Both are equal");
             }else{
-                System.out.println("Both are not equal");
+                report.log("Both are not equal");
             }
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 
@@ -308,44 +322,44 @@ public class JupiterPagesPractice {
             String total=String.valueOf(Total.getText());
             String TotalValue =total.substring(7,12);
             double ActualTotal=Double.parseDouble(TotalValue);
-            System.out.println("Total="+ ActualTotal);
+            report.log("Total="+ ActualTotal);
                //Expected value of StuffedFrog
             String PriceOfStuffedFrog= String.valueOf(ActualPriceOfStuffedFrog.getText());
             String NewPrice1=PriceOfStuffedFrog.substring(1,6);
             double ProductPriceOfStuffedFrog=Double.parseDouble(NewPrice1);
-            System.out.println("Stuffed Frog ActualPrice-"+ProductPriceOfStuffedFrog);
+            report.log("Stuffed Frog ActualPrice-"+ProductPriceOfStuffedFrog);
             String quantityOfStuffedFrog=String.valueOf(QtyOfStuffedFrog.getAttribute("value"));
             int Qty1=Integer.parseInt(quantityOfStuffedFrog);
-            System.out.println("QtyOfStuffedFrog-"+Qty1);
+            report.log("QtyOfStuffedFrog-"+Qty1);
             double ExpectedSubtotal1 =ProductPriceOfStuffedFrog*Qty1;
                 //Expected value of FluffyBunny
             String PriceOfFluffyBunny= String.valueOf(ActualPriceOfFluffyBunny.getText());
             String NewPrice2=PriceOfFluffyBunny.substring(1,5);
             double ProductPriceOfFluffyBunny = Double.parseDouble(NewPrice2);
-            System.out.println("Fluffy Bunny ActualPrice-"+ProductPriceOfFluffyBunny);
+            report.log("Fluffy Bunny ActualPrice-"+ProductPriceOfFluffyBunny);
             String quantityOfFluffyBunny=String.valueOf(QtyOfFluffyBunny.getAttribute("value"));
             int Qty2=Integer.parseInt(quantityOfFluffyBunny);
-            System.out.println("QtyOfFluffyBunny-"+Qty2);
+            report.log("QtyOfFluffyBunny-"+Qty2);
             double ExpectedSubtotal2 =ProductPriceOfFluffyBunny*Qty2;
                 //Expected value of ValentineBear
             String PriceOfValentineBear=String.valueOf(ActualPriceOfValentineBear.getText());
             String NewPrice3=PriceOfValentineBear.substring(1,6);
             double ProductPriceOfValentineBear=Double.parseDouble(NewPrice3);
-            System.out.println("Valentine Bear ActualPrice-"+ProductPriceOfValentineBear);
+            report.log("Valentine Bear ActualPrice-"+ProductPriceOfValentineBear);
             String quantityOfValentineBear=String.valueOf(QtyOfValentineBear.getAttribute("value"));
             int Qty3=Integer.parseInt(quantityOfValentineBear);
-            System.out.println("QtyOfValentineBear-"+Qty3);
+            report.log("QtyOfValentineBear-"+Qty3);
             double ExpectedSubtotal3=ProductPriceOfValentineBear*Qty3;
                  //Sum of Subtotal
             double sumOfSubtotal=(ExpectedSubtotal1+ExpectedSubtotal2+ExpectedSubtotal3);
-            System.out.println("Sum of Subtotal="+sumOfSubtotal);
+            report.log("Sum of Subtotal="+sumOfSubtotal);
             if (ActualTotal == sumOfSubtotal){
-                System.out.println("Both are equal");
+                report.log("Both are equal");
             } else{
-                System.out.println("Both are not equal");
+                report.log("Both are not equal");
             }
         }catch (Exception ex){
-            System.out.println("Exception Found-"+ex);
+            report.log("Exception Found-"+ex);
         }
     }
 

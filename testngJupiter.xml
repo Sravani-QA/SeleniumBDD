@@ -11,4 +11,22 @@
                 <class name="JupiterPractice.TestCase1"/>
             </classes>
         </test>
+
+        <test name="Test2" >
+            <classes>
+                <class name="JupiterPractice.TestCase2"/>
+            </classes>
+        </test>
+
+        <test name="Test3" >
+            <classes>
+                <class name="JupiterPractice.TestCase3"/>
+            </classes>
+        </test>
+
+        <test name="Test4" >
+            <classes>
+                <class name="JupiterPractice.TestCase4"/>
+            </classes>
+        </test>
 </suite>
