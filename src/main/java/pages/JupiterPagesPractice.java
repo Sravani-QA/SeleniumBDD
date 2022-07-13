@@ -354,6 +354,8 @@ public class JupiterPagesPractice {
             double sumOfSubtotal=(ExpectedSubtotal1+ExpectedSubtotal2+ExpectedSubtotal3);
             report.log("Sum of Subtotal="+sumOfSubtotal);
             if (ActualTotal == sumOfSubtotal){
+                basePage.waitForSeconds(3);
+                report.takeScreenshot(driver, "Price chart");
                 report.log("Both are equal");
             } else{
                 report.log("Both are not equal");
