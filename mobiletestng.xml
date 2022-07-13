@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mobile Regression TestSuite"  thread-count="1">
+
+        <listeners>
+            <listener class-name="utilities.TestListener"/>
+        </listeners>
+       <parameter name = "Browser" value="browserstack-mobile-android"/>
+<!--        <parameter name = "Browser" value="local-mobile-android"/>-->
+        <test name="LoginAndLogoutTest" >
+            <classes>
+                <class name="LexusMobileTests.LoginTest"/>
+            </classes>
+        </test>
+<!--        <test name="OnDemandBookingTest" >-->
+<!--            <classes>-->
+<!--                <class name="LexusMobileTests.OnDemandBookingTest"/>-->
+<!--            </classes>-->
+<!--        </test>-->
+<!--        <test name="View Booking Details" >-->
+<!--            <classes>-->
+<!--                <class name="LexusMobileTests.ViewBookingDetailsTest"/>-->
+<!--            </classes>-->
+<!--        </test>-->
+<!--        <test name="CancelBookingTest" >-->
+<!--            <classes>-->
+<!--                <class name="LexusMobileTests.CancelBookingTest"/>-->
+<!--            </classes>-->
+<!--        </test>-->
+        <test name="ViewValetParkingBalance" >
+            <classes>
+                <class name="LexusMobileTests.ViewValetParkingBalance"/>
+            </classes>
+        </test>
+        <test name="ViewValetParkingLocations" >
+            <classes>
+                <class name="LexusMobileTests.ViewValetParkingLocations"/>
+            </classes>
+        </test>
+        <test name="Validate Exclusive Offers" >
+            <classes>
+                <class name="LexusMobileTests.ValidateExclusiveOffers"/>
+            </classes>
+        </test>
+        <test name="Validate Caltex Page" >
+            <classes>
+                <class name="LexusMobileTests.ValidateCaltexPage"/>
+            </classes>
+        </test>
+        <test name="Validate Encore PageLinks" >
+            <classes>
+                <class name="LexusMobileTests.ValidateEncorePageLinks"/>
+            </classes>
+        </test>
+        <test name="Validate Vehicle Details" >
+            <classes>
+                <class name="LexusMobileTests.ValidateVehicleDetails"/>
+            </classes>
+        </test>
+        <test name="Validate More Page Details" >
+            <classes>
+                <class name="LexusMobileTests.ValidateMorePageDetails"/>
+            </classes>
+        </test>
+
+</suite>

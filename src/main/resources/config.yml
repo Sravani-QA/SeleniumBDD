@@ -1,0 +1,27 @@
+###Test Data
+Environment: Prod
+AppName: au.com.lexus.mylexus.app_prod.apk
+Email: raju.malle@ie.com.au
+Password: Lexus@8534
+
+#Environment: Preprod ### it's same as Alpha
+#AppName: au.com.lexus.mylexus.app_alpha.apk
+#Email: raju.malle@ie.com.au
+#Password: Lexus@8534
+
+#Environment: QA
+#AppName: au.com.lexus.mylexus.app_qa.apk
+#Email: lexus_guest12b@mailinator.com
+#Password: Test12345!
+
+#On Demand Booking Dates
+StartDate: "22"
+EndDate: "26"
+
+#SPA Web Application Details
+QA: https://lexusownership-spa-qa.tmca-digital.com.au/
+Preprod: https://lexusownership-spa-preprod.tmca-digital.com.au/
+Prod: https://account.lexus.com.au/
+
+
+
