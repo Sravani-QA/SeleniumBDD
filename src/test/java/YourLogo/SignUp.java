@@ -1,7 +1,7 @@
 package YourLogo;
 
-import com.beust.jcommander.Parameter;
 import org.testng.annotations.Test;
+import pages.YourLogoPages;
 
 public class SignUp {
     @Test

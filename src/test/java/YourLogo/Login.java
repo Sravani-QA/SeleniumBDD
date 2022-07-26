@@ -1,6 +1,7 @@
 package YourLogo;
 
 import org.testng.annotations.Test;
+import pages.YourLogoPages;
 
 public class Login {
     @Test
