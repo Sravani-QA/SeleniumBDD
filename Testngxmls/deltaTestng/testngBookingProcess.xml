@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DeltaPages Tests Suite"  thread-count="1">
+
+       <listeners>
+            <listener class-name="utilities.TestListener"/>
+        </listeners>
+
+
+        <test name="Booking with Domestic Airlines Test" >
+            <classes>
+                <class name="DeltaTests.booking.Booking_DomesticAirlinesTest"/>
+            </classes>
+        </test>
+
+</suite>

@@ -6,29 +6,35 @@
             <listener class-name="utilities.TestListener"/>
         </listeners>
 
-<!--        <test name="Application SignUp Test" >-->
-<!--            <classes>-->
-<!--                <class name="DeltaTests.ApplicationSignUpTest"/>-->
-<!--            </classes>-->
-<!--        </test>-->
-
-        <test name="Booking with Domestic Airlines Test" >
+        <test name="Application SignUp Test" >
             <classes>
-                <class name="DeltaTests.Booking_DomesticAirlinesTest"/>
+                <class name="DeltaTests.ApplicationSignUpTest"/>
             </classes>
         </test>
 
-<!--        <test name="Finding my Trips" >-->
-<!--            <classes>-->
-<!--                <class name="DeltaTests.MyTrips"/>-->
-<!--            </classes>-->
-<!--        </test>-->
+        <test name="Booking with Domestic Airlines Test" >
+            <classes>
+                <class name="DeltaTests.booking.Booking_DomesticAirlinesTest"/>
+            </classes>
+        </test>
 
-<!--        <test name="TestCase4" >-->
-<!--            <classes>-->
-<!--                <class name="YourLogo.DressesShopping"/>-->
-<!--            </classes>-->
-<!--        </test>-->
+        <test name="Finding my Trips" >
+            <classes>
+                <class name="DeltaTests.MyTripsTest"/>
+            </classes>
+        </test>
+
+        <test name="CheckIn With ConfirmationNumber Test" >
+            <classes>
+                <class name="DeltaTests.checkIn.CheckInWithConfirmationNumberTest"/>
+            </classes>
+        </test>
+
+        <test name="CheckIn With CreditCardNumberTest" >
+            <classes>
+                <class name="DeltaTests.checkIn.CheckInWithCreditCardNumberTest"/>
+            </classes>
+        </test>
 
 
 </suite>

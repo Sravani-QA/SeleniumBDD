@@ -36,10 +36,10 @@ public class DriverFactory {
        // String browser = "firefox";
         System.out.println("Run Configuration provided from testng->"+browser);
         if(driver==null) {
-            if (browser.contains("chrome")) {
+            if (browser.equals("chrome")) {
                 System.setProperty("webdriver.chrome.driver", "src/main/resources/Drivers/chromedriver103");
                 driver = new ChromeDriver();
-            } else if (browser.contains("firefox")) {
+            } else if (browser.equals("firefox")) {
                 System.setProperty("webdriver.gecko.driver", "src/main/resources/Drivers/geckodriver");
                 driver = new FirefoxDriver();
             }
