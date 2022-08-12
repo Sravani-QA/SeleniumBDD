@@ -8,6 +8,7 @@ public class TestCase4 {
     public void test4(){
         JupiterPagesPractice jupiterPagesPractice=new JupiterPagesPractice();
         jupiterPagesPractice.navigateToURL();
+        jupiterPagesPractice.IAmOnHomePage();
         jupiterPagesPractice.navigateToShopPage();
 
         jupiterPagesPractice.buyStuffedFrog();

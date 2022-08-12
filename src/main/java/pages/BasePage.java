@@ -15,12 +15,12 @@ public class BasePage {
         try{
             if(checkElementExists(element)){
                 element.click();
-                report.log("Clicked on - "+element);
+                //report.log("Clicked on - "+element);
             }else{
-                report.logResult("Element not exist. Failed to click on element->"+element, LogStatus.FAIL);
+                //report.logResult("Element not exist. Failed to click on element->"+element, LogStatus.FAIL);
             }
         }catch (Exception e){
-            report.logResult("Element not exist. Failed to click on element->"+element, LogStatus.FAIL);
+            //report.logResult("Element not exist. Failed to click on element->"+element, LogStatus.FAIL);
         }
     }
 
@@ -30,12 +30,12 @@ public class BasePage {
             if(checkElementExists(element)){
                 element.clear();
                 element.sendKeys(text);
-                report.log("Entered value : "+text);
+                //report.log("Entered value : "+text);
             }else{
-                report.logResult("Element not exist. Failed to enter text into element->"+element, LogStatus.FAIL);
+                //report.logResult("Element not exist. Failed to enter text into element->"+element, LogStatus.FAIL);
             }
         }catch (Exception e){
-            report.logResult("Element not exist. Failed to enter text into element->"+element, LogStatus.FAIL);
+            //report.logResult("Element not exist. Failed to enter text into element->"+element, LogStatus.FAIL);
         }
     }
 
@@ -46,10 +46,10 @@ public class BasePage {
                 Select select = new Select(element);
                 select.selectByValue(value);
             }else{
-                report.logResult("Element not exist. Failed to select value from->"+element, LogStatus.FAIL);
+                //report.logResult("Element not exist. Failed to select value from->"+element, LogStatus.FAIL);
             }
         }catch (Exception e){
-            report.logResult("Failed to select value from "+element, LogStatus.FAIL);
+            //report.logResult("Failed to select value from "+element, LogStatus.FAIL);
         }
     }
 
@@ -60,10 +60,10 @@ public class BasePage {
                 Select select = new Select(element);
                 select.selectByIndex(index);
             }else{
-                report.logResult("Element not exist. Failed to select value from->"+element, LogStatus.FAIL);
+                //report.logResult("Element not exist. Failed to select value from->"+element, LogStatus.FAIL);
             }
         }catch (Exception e){
-            report.logResult("Failed to select value from "+element, LogStatus.FAIL);
+            //report.logResult("Failed to select value from "+element, LogStatus.FAIL);
         }
     }
 
@@ -82,7 +82,7 @@ public class BasePage {
         try{
             Thread.sleep(t* 1000L);
         }catch (InterruptedException e){
-            report.logResult("Failed in wait for mentioned seconds-"+e.getMessage(), LogStatus.FAIL);
+            //report.logResult("Failed in wait for mentioned seconds-"+e.getMessage(), LogStatus.FAIL);
         }
     }
 
@@ -92,10 +92,10 @@ public class BasePage {
             if(checkElementExists(element)){
                 text = element.getText();
             }else{
-                report.logResult("Failed to get text from -"+element, LogStatus.FAIL);
+                //report.logResult("Failed to get text from -"+element, LogStatus.FAIL);
             }
         }catch (Exception e){
-            report.logResult("Failed in wait for mentioned seconds-"+e.getMessage(), LogStatus.FAIL);
+            //report.logResult("Failed in wait for mentioned seconds-"+e.getMessage(), LogStatus.FAIL);
         }
         return text;
     }
@@ -103,12 +103,12 @@ public class BasePage {
     public void validateElementExists(WebElement element) {
         try{
             if(checkElementExists(element)){
-                report.log(element+"Element exists");
+                //report.log(element+"Element exists");
             }else{
-                report.logResult("Element not exist-"+element, LogStatus.FAIL);
+                //report.logResult("Element not exist-"+element, LogStatus.FAIL);
             }
         }catch (Exception e){
-            report.logResult("Element not exist-"+element, LogStatus.FAIL);
+            //report.logResult("Element not exist-"+element, LogStatus.FAIL);
         }
     }
 }

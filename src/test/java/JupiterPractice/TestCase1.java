@@ -9,6 +9,7 @@ public class TestCase1 {
 
        JupiterPagesPractice jupiterPagesPractice=new JupiterPagesPractice();
        jupiterPagesPractice.navigateToURL();
+       jupiterPagesPractice.IAmOnHomePage();
        jupiterPagesPractice.navigateToContactPage();
        jupiterPagesPractice.submitButton();
        jupiterPagesPractice.validateContactPageMandatoryErrors();

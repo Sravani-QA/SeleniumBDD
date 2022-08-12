@@ -34,7 +34,7 @@ public class DriverFactory {
         //String browser = System.getProperty("Browser");
         String browser = "chrome";
        // String browser = "firefox";
-        System.out.println("Run Configuration provided from testng->"+browser);
+        System.out.println("Browser Provided-->"+browser);
         if(driver==null) {
             if (browser.equals("chrome")) {
                 System.setProperty("webdriver.chrome.driver", "src/main/resources/Drivers/chromedriver103");

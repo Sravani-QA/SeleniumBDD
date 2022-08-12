@@ -9,6 +9,7 @@ public class TestCase2 {
         JupiterPagesPractice jupiterPagesPractice=new JupiterPagesPractice();
         //jupiterPagesPractice.createDriver();
         jupiterPagesPractice.navigateToURL();
+        jupiterPagesPractice.IAmOnHomePage();
         jupiterPagesPractice.navigateToContactPage();
         jupiterPagesPractice.enterMandatoryFieldsInContactPage("Anu","anu@gmail.com","Hello");
         jupiterPagesPractice.submitButton();

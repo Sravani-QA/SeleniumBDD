@@ -9,6 +9,7 @@ public class TestCase3 {
         JupiterPagesPractice jupiterPagesPractice=new JupiterPagesPractice();
        // jupiterPagesPractice.createDriver();
         jupiterPagesPractice.navigateToURL();
+        jupiterPagesPractice.IAmOnHomePage();
         jupiterPagesPractice.navigateToShopPage();
         jupiterPagesPractice.buyFunnyCow();
         jupiterPagesPractice.buyFunnyCow();
